@@ -146,7 +146,7 @@ Figure 1. Statistical Areas for which age data were available and RCM operating 
 
 Table 1a. Geoduck RCM model fits 
 ```{r}
-maketab("./OM_fitting/Geoduck","Statistical Area")
+maketab("./OM_Fitting/Geoduck","Statistical Area")
 ```
 
 &nbsp;
@@ -184,7 +184,7 @@ Figure 2. Statistical Areas for which composition data and recent catches were a
 
 Table 2a. Green Urchin RCM model fits 
 ```{r}
-maketab("./OM_fitting/Green_Urchin","Statistical Area")
+maketab("./OM_Fitting/Green_Urchin","Statistical Area")
 ```
 
 &nbsp;
@@ -229,7 +229,7 @@ Figure 1. Location of historical Sea Cucumber harvests.
 
 Table 3a. Sea cucumber RCM model fits 
 ```{r}
-maketab("./OM_fitting/Sea_Cucumber","Quota Management Area")
+maketab("./OM_Fitting/Sea_Cucumber","Quota Management Area")
 ```
 
 &nbsp;
@@ -271,7 +271,7 @@ Figure 1. Location of beaches where manila clams are surveyed.
 
 Table 4a. Manila clam RCM model fits 
 ```{r}
-maketab("./OM_fitting/Manila_Clam","Beach")
+maketab("./OM_Fitting/Manila_Clam","Beach")
 ```
 
 &nbsp;
