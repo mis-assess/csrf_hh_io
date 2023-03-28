@@ -300,13 +300,13 @@ getprojectinfo("Manila_Clam")
 
 [DFO 2021 (Anderson et al)](References/MPframework.pdf)
 
-[Geoduck IFMP]("References/Geoduck_IFMP.pdf")
+[Geoduck IFMP](References/Geoduck_IFMP.pdf)
 
-[Green Sea Urchin IFMP]("References/GSU_IFMP.pdf")
+[Green Sea Urchin IFMP](References/GSU_IFMP.pdf)
 
-[Sea Cucumber IFMP]("References/Sea_Cucumber_IFMP.pdf")
+[Sea Cucumber IFMP](References/Sea_Cucumber_IFMP.pdf)
 
-[Intertidal Clam IFMP]("References/Intertidal_Clams_IFMP.pdf")
+[Intertidal Clam IFMP](References/Intertidal_Clams_IFMP.pdf)
 
 ***
 
