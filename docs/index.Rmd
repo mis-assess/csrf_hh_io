@@ -210,6 +210,15 @@ The Reference Case operating model presented here is for Quota Management Area 2
 MSE-style closed-loop projections were undertaken for the current harvest rate, current catch levels and six example management procedures that aim for 2.2, 4.2 and 6.7% harvest rates without alternating closures (C_22, C_42, C_67) and also with alternating closures (Alt_22, Alt_42, Alt_67) whereby the QMA is closed and opened every other projection year. 
 
 
+&nbsp;
+
+<img src="OM_Descriptions/Figures/Sea_Cucumber/Sea_Cucumber_areas.jpg" width="300">
+
+Figure 1. Location of historical Sea Cucumber harvests. 
+
+&nbsp;
+
+
 [Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Sea_Cucumber_Annotated.html)
 
 [QMA Comparisons (.html)](Comparisons/Sea_Cucumber_Area_Comparison.html)
@@ -241,11 +250,22 @@ The Reference Case operating model presented here is for beach 17-19-002 which h
 MSE-style closed-loop projections were undertaken for the current harvest rate and current catch levels. 
 
 
+&nbsp;
+
+<img src="OM_Descriptions/Figures/Manila_Clam/Manila_Clam_areas.jpg" width="300">
+
+Figure 1. Location of beaches where manila clams are surveyed. 
+
+&nbsp;
+
+
 [Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Manila_Clam_Annotated.html)
 
 [Beach Comparisons (.html)](Comparisons/Manila_Clam_Area_Comparison.html)
 
 [Closed-loop MSE-type projections (.html)](MSEs/Manila_Clam_Demo_MSE.html)
+
+
 
 &nbsp;
 

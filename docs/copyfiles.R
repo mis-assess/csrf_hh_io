@@ -21,7 +21,7 @@ for(i in 1:length(nams)){
   thisdir = paste0(frompath,"/OMs/",nams[i],"/Reference_Case/Reports/")
   fromfiles = list.files(thisdir)
   fromfiles = fromfiles[!grepl("Area_Comparison",fromfiles)]
-  for(j in 1:length(fromfiles))    file.copy(paste0(thisdir,fromfiles[j]), paste0(topath,"/OM_Fitting/",nams[i],"/",fromfiles[j]))
+  for(j in 1:length(fromfiles))    file.copy(paste0(thisdir,fromfiles[j]), paste0(topath,"/OM_Fitting/",nams[i],"/",fromfiles[j]),overwrite=T)
   
   # MSE results
   file.copy(paste0(frompath,"/MSEs/Demo/Reports/",nams[i],"_Demo_MSE.html"),
@@ -32,7 +32,7 @@ for(i in 1:length(nams)){
   fromfiles = list.files(thisdir)
   fromfiles = fromfiles[!grepl("Area_Comparison",fromfiles)]
   for(j in 1:length(fromfiles)){
-    file.copy(paste0(thisdir,fromfiles[j]), paste0(topath,"/OM_Descriptions/Figures/",nams[i],"/",fromfiles[j]))
+    file.copy(paste0(thisdir,fromfiles[j]), paste0(topath,"/OM_Descriptions/Figures/",nams[i],"/",fromfiles[j]),overwrite=T)
     
   }    
   
