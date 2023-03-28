@@ -1,5 +1,5 @@
 ---
-title: "Informing Management of B.C. Hand-Harvested Invertebrates: Operating models, MPs and MSE"
+title: "Informing Management of B.C. Hand-Harvested Invertebrates: Operating Models, MPs and MSE"
 author: "Tom Carruthers <tom@bluematterscience.com>"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
@@ -46,6 +46,24 @@ library(dplyr)
 library(kableExtra)
 knitr::opts_chunk$set(echo = FALSE)
 
+maketab <- function(dir,Alab="Statistical Area"){
+  filenam = list.files(dir)
+  nf = length(filenam)
+  DF = data.frame(filenam)
+  names(DF) = c("Area")
+  #filepath = list.files(dir, full.names = T, include.dirs = T)
+  fit.link = paste0('<a href=', file.path(dir, filenam), '> ', DF$Area , ' </a>')
+  DF$Area <- fit.link
+  DT::datatable(DF, escape=1,
+                colnames=c(Alab),
+                filter = 'top',
+                options = list(
+                  pageLength = 10, 
+                  autoWidth = TRUE,
+                  sDom  = '<"top">lrt<"bottom">ip'))
+}
+
+
 
 ```
 
@@ -86,43 +104,72 @@ kable(dat,"simple",col.names=rep("",2))
 
 ### Geoduck
 
-[OM Description (.html)](OM_Descriptions/Ref_Case_Geoduck_Annotated.html)
+Geoduck operating models were constructed assuming that discrete populations occur at the resolution of Statistical Area (Management Area). Models were conditioned using the Rapid Conditioning Model of openMSE (SAMtool package, Huynh et al. 2023) 
+
+[Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Geoduck_Annotated.html)
+
 [Stat Area Comparisons (.html)](Comparisons/Geoduck_Area_Comparison.html)
+
+Table 1. Geoduck RCM model fits 
+```{r}
+maketab("./OM_fitting/Geoduck","Statistical Area")
+```
 
 
 ***
 
 ### Green Sea Urchin
 
-[OM Description (.html)](OM_Descriptions/Ref_Case_Green_Urchin_Annotated.html)
-[Stat Area Comparisons (.html)](Comparisons/Urchin_Area_Comparison.html)
+[Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Green_Urchin_Annotated.html)
+
+[Stat Area Comparisons (.html)](Comparisons/Green_Urchin_Area_Comparison.html)
+
+Table 2. Green Sea Urchin RCM model fits 
+```{r}
+maketab("./OM_fitting/Green_Urchin","Statistical Area")
+```
+
 
 ***
 
 
 ### Sea Cucumber
 
-[OM Description (.html)](OM_Descriptions/Ref_Case_Sea_Cucumber_Annotated.html)
+[Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Sea_Cucumber_Annotated.html)
+
 [QMA Comparisons (.html)](Comparisons/Sea_Cucumber_Area_Comparison.html)
+
+Table 3. Sea_Cucumber RCM model fits 
+```{r}
+maketab("./OM_fitting/Sea_Cucumber","Quota Management Area")
+```
 
 
 ***
 
 ### Manila Clam
 
-[OM Description (.html)](OM_Descriptions/Ref_Case_Manila_Clam_Annotated.html)
+[Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Manila_Clam_Annotated.html)
+
 [Beach Comparisons (.html)](Comparisons/Manila_Clam_Area_Comparison.html)
 
+Table 4. Manila Clam RCM model fits 
+```{r}
+maketab("./OM_fitting/Manila_Clam","Beach")
+```
+
+
 
 ***
 
-### Documentation 
-<div class="col2">
+### Software and Code
 
+[csrf_hh_data GitHub Repository](https://github.com/mis-assess/csrf_hh_data)
 
-</div>
+[openMSE (MSEtool, DLMtool, SAMtool R libraries)](https://openMSE.com)
 
-***
+[Rapid Conditioning Model (RCM) (Huynh 2023)](https://samtool.openmse.com/reference/RCM.html)
+
 
 
 ***
@@ -131,8 +178,8 @@ kable(dat,"simple",col.names=rep("",2))
 
 [DFO 2021 (Anderson et al)](References/MPframework.pdf)
 
-***
 
+***
 
 ### Acknowledgements
 
@@ -146,12 +193,7 @@ Sea cucumber collaborators: Jill Campbell, Christine Hansen
 
 Manila clam collaborators: Alexander Dalton, Dominique Bureau
 
+***
 
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
