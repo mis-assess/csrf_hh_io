@@ -1,0 +1,115 @@
+---
+title: "Informing Management of B.C. Hand-Harvested Invertebrates: Operating models, MPs and MSE"
+author: "Tom Carruthers <tom@bluematterscience.com>"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+![](img/Front Page.jpg)
+
+
+
+
+
+
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+  .col4 {
+    columns: 4 100px;
+    -webkit-columns: 4 100px;
+    -moz-columns: 4 100px;
+  }
+</style>
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(kableExtra)
+knitr::opts_chunk$set(echo = FALSE)
+
+
+```
+
+
+### Project details
+
+```{r ProjDets, eval=T}
+dat<-data.frame(c("Funding body","Funding stream        .","Solicitation No.","Contract No.","Project Partners","Collaborators"),
+                 c("Canadian Department of Fisheries and Oceans (DFO)",
+                   "ProServices, Medium Complexity Bid",
+                   "30003600",
+                   "4500038008",
+                   "Blue Matter Science Ltd.",
+                   "Tom Carruthers, Adrian Hordyk, Quang Huynh"))
+
+kable(dat,col.names=rep("",2)) 
+ 
+
+```
+
+
+***
+
+
+## Geoduck
+
+[OM Description (.html)](OM_Descriptions/Ref_Case_Geoduck_Annotated.html)
+
+
+## Green Sea Urchin
+
+
+[OM Description (.html)](OM_Descriptions/Ref_Case_Green_Urchin_Annotated.html)
+
+
+## Sea Cucumber
+
+
+[OM Description (.html)](OM_Descriptions/Ref_Case_Sea_Cucumber_Annotated.html)
+
+
+## Manila Clam
+
+
+[OM Description (.html)](OM_Descriptions/Ref_Case_Manila_Clam_Annotated.html)
+
+
+
+## Documentation 
+<div class="col2">
+
+
+</div>
+
+***
+
+
+***
+
+## SCRS papers
+
+[DFO 2021 (Anderson et al)](References/MPframework.pdf)
+
+***
+
+
+## Acknowledgements
+
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
