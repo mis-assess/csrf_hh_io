@@ -4,12 +4,7 @@ author: "Tom Carruthers <tom@bluematterscience.com>"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
-
-![](img/Front Page.jpg)
-
-
-
-
+&nbsp;
 
 
 <style>
@@ -30,6 +25,22 @@ output: html_document
   }
 </style>
 
+***
+
+<img src="img/Front Page.jpg" width = 910>
+
+***
+
+&nbsp;
+
+<img src="img/BM.jpg" width="140">
+<img src="img/openMSE.jpg" width="150">
+<img src="img/DFO.png" width="140">
+
+
+
+***
+
 ```{r setup, include=FALSE}
 library(dplyr)
 library(kableExtra)
@@ -39,18 +50,32 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+### Disclaimer
+
+The following work is preliminary and intended only as tool for eliciting feedback on data, modelling and other aspects of these fisheries. 
+
+None of these results are final. 
+
+These analyses do not necessarily reflect the point of view of DFO or other funders and in no way anticipate DFO future policy in this area.
+
+***
+
+
 ### Project details
 
 ```{r ProjDets, eval=T}
-dat<-data.frame(c("Funding body","Funding stream        .","Solicitation No.","Contract No.","Project Partners","Collaborators"),
-                 c("Canadian Department of Fisheries and Oceans (DFO)",
+dat<-data.frame(c("Term","Funding body","Funding stream","Solicitation No.","Contract No.","Project Partners","Blue Matter Team","DFO Principal Investigators"),
+                
+                 c("April 2022 - March 2023",
+                   "Canadian Department of Fisheries and Oceans (DFO)",
                    "ProServices, Medium Complexity Bid",
                    "30003600",
                    "4500038008",
                    "Blue Matter Science Ltd.",
-                   "Tom Carruthers, Adrian Hordyk, Quang Huynh"))
+                   "Tom Carruthers, Adrian Hordyk, Quang Huynh",
+                   "Shannon Obradovich, Mackenzie Mazur"))
 
-kable(dat,col.names=rep("",2)) 
+kable(dat,"simple",col.names=rep("",2)) 
  
 
 ```
@@ -59,31 +84,39 @@ kable(dat,col.names=rep("",2))
 ***
 
 
-## Geoduck
+### Geoduck
 
 [OM Description (.html)](OM_Descriptions/Ref_Case_Geoduck_Annotated.html)
+[Stat Area Comparisons (.html)](Comparisons/Geoduck_Area_Comparison.html)
 
 
-## Green Sea Urchin
+***
 
+### Green Sea Urchin
 
 [OM Description (.html)](OM_Descriptions/Ref_Case_Green_Urchin_Annotated.html)
+[Stat Area Comparisons (.html)](Comparisons/Urchin_Area_Comparison.html)
+
+***
 
 
-## Sea Cucumber
-
+### Sea Cucumber
 
 [OM Description (.html)](OM_Descriptions/Ref_Case_Sea_Cucumber_Annotated.html)
+[QMA Comparisons (.html)](Comparisons/Sea_Cucumber_Area_Comparison.html)
 
 
-## Manila Clam
+***
 
+### Manila Clam
 
 [OM Description (.html)](OM_Descriptions/Ref_Case_Manila_Clam_Annotated.html)
+[Beach Comparisons (.html)](Comparisons/Manila_Clam_Area_Comparison.html)
 
 
+***
 
-## Documentation 
+### Documentation 
 <div class="col2">
 
 
@@ -94,15 +127,24 @@ kable(dat,col.names=rep("",2))
 
 ***
 
-## SCRS papers
+### References
 
 [DFO 2021 (Anderson et al)](References/MPframework.pdf)
 
 ***
 
 
-## Acknowledgements
+### Acknowledgements
 
+Special thanks to Rob Flemming for his help in providing and explaining the various datasets and also to Dominique Bureau for providing guidance on data interpretation and reviewing materials. 
+
+Geoduck collaborators: Erin Porszt, Dominique Bureau
+
+Green urchin collaborators: Lyanne Curtis, Christine Hansen
+
+Sea cucumber collaborators: Jill Campbell, Christine Hansen
+
+Manila clam collaborators: Alexander Dalton, Dominique Bureau
 
 
 
