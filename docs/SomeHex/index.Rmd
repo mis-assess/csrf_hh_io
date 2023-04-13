@@ -199,13 +199,13 @@ getprojectinfo("Green_Urchin")
 
 ### Giant Red Sea Cucumber (*Apostichopus californicus*)
 
-Sea cucumber operating models were configured to be numbers-based:due to the inability to age sea cucumbers and representatively measure/weight them. This entails the following working assumptioins: knife-edge growth to size / weight 1 at age 2; Recruitment based on a Beverton-Holt calculated from to mature numbers (although this can be modified later); Asymptotic selectivity from young age class (e.g. age 4-7).
+Sea cucumber operating models were configured to be numbers-based due to the inability to age sea cucumbers and representatively measure/weigh them. This entails the following working assumptions: knife-edge growth to size / weight 1 at age 2; Recruitment based on a Beverton-Holt S-R relationship calculated from mature numbers (although this can be modified later); Asymptotic selectivity from a young age class (e.g. age 4-7).
 
-Since harvesting is by diver and highly selective, regulation is by harvest rate and bag-limit and the numbers-based operating model is potentially appropriate for the management regime but requires realistic modelling of the bag limit impacts on discard rate and size selectivity.
+Since harvesting is by diver and highly selective, regulation is by harvest rate and bag-limit,  the numbers-based operating model is potentially appropriate for the management regime but requires realistic modelling of the bag-limit impacts on discard rate and size selectivity.
 
-Models were conditioned using RCM and fitted to historical catches, an estimate of absolute biomass, a time series of survey density estimates.  
+Models were conditioned using RCM and fitted to historical catches, an estimate of absolute biomass, and a time series of survey density estimates.  
 
-The Reference Case operating model presented here is for Quota Management Area 25A (Nootka / Tahsis on the WCVI, Subareas 25-6, 25-8, 25-9, 25-12, 25-15) which was seleected for its relatively long history of density surveys and recent reopening in 2020.
+The Reference Case operating model presented here is for Quota Management Area 25A (Nootka / Tahsis on the WCVI, Subareas 25-6, 25-8, 25-9, 25-12, 25-15) which was selected for its relatively long history of density surveys and recent reopening in 2020.
 
 MSE-style closed-loop projections were undertaken for the current harvest rate, current catch levels and six example management procedures that aim for 2.2, 4.2 and 6.7% harvest rates without alternating closures (C_22, C_42, C_67) and also with alternating closures (Alt_22, Alt_42, Alt_67) whereby the QMA is closed and opened every other projection year. 
 
