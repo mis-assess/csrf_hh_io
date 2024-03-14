@@ -101,11 +101,11 @@ Establish operating models for at least four species of hand-harvested invertebr
 ```{r ProjDets, eval=T}
 dat<-data.frame(c("Term","Funding body","Funding stream","Solicitation No.","Contract No.","Project Partners","Blue Matter Team","DFO Principal Investigators"),
                 
-                 c("April 2022 - March 2023",
+                 c("April 2022 - March 2023, April 2023 - March 2024",
                    "Canadian Department of Fisheries and Oceans (DFO)",
                    "ProServices, Medium Complexity Bid",
-                   "30003600",
-                   "4500038008",
+                   "30003600, 30004307",
+                   "4500038008, 4500051010",
                    "Blue Matter Science Ltd.",
                    "Tom Carruthers, Adrian Hordyk, Quang Huynh",
                    "Shannon Obradovich, Mackenzie Mazur"))

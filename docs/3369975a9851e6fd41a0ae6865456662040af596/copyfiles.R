@@ -3,7 +3,7 @@
 githubdir = "C:/Github/"
 githubdir = "C:/Users/tcarruth/Documents/Github/"
 frompath = paste0(githubdir,"csrf_hh_data")
-topath = paste0(githubdir,"csrf_hh_io/docs") # setwd(topath)
+topath = paste0(githubdir,"csrf_hh_io/docs/3369975a9851e6fd41a0ae6865456662040af596") # setwd(topath)
 nams = c("Geoduck","Green_Urchin","Sea_Cucumber","Manila_Clam")
 
 
