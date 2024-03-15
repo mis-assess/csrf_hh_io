@@ -1,9 +1,8 @@
 # Copy files to github io
 
-githubdir = "C:/Github/"
-githubdir = "C:/Users/tcarruth/Documents/Github/"
+githubdir = "C:/GitHub/" # githubdir = "C:/Users/tcarruth/Documents/Github/"
 frompath = paste0(githubdir,"csrf_hh_data")
-topath = paste0(githubdir,"csrf_hh_io/docs") # setwd(topath)
+topath = paste0(githubdir,"csrf_hh_io/docs/3369975a9851e6fd41a0ae6865456662040af596") # setwd(topath)
 nams = c("Geoduck","Green_Urchin","Sea_Cucumber","Manila_Clam")
 
 
@@ -40,7 +39,9 @@ for(i in 1:length(nams)){
 
 file.copy(paste0(frompath,"/Management Info/MPframework.pdf"),paste0(topath,"/References/MPframework.pdf"),overwrite=T)
 file.copy(paste0(frompath,"/Project Info/Status Assumptions To do.xlsx"),paste0(topath,"/Project_Info/Status Assumptions To do.xlsx"),overwrite=T)
+file.copy(paste0(frompath,"/Project Info/Progress.xlsx"),paste0(topath,"/Project_Info/Progress.xlsx"),overwrite=T)
 
+paste0(frompath,"/Project Info/Progress.xlsx")
 
 file.copy(paste0(frompath,"/Geoduck Info/Geoduck_IFMP.pdf"),paste0(topath,"/References/Geoduck_IFMP.pdf"),overwrite=T)
 file.copy(paste0(frompath,"/Urchin Info/GSU_IFMP.pdf"),paste0(topath,"/References/GSU_IFMP.pdf"),overwrite=T)

@@ -76,6 +76,16 @@ getprojectinfo<-function(page){
 }
   
 
+getprog<-function(page){
+  
+  tab=as.data.frame(read_excel("Project_Info/Progress.xlsx", sheet = page))
+  tab=tab[,2:3]
+  tab[is.na(tab)]=""
+  kable(tab,"simple")#,col.names=rep("",2)) 
+}
+  
+
+
 
 ```
 
@@ -118,16 +128,38 @@ kable(dat,"simple",col.names=rep("",2))
 
 ***
 
+### Operating models 
+
+An operating model is a theoretical description of fishery and population dynamics used for the testing of management strategies that could include, for example,  data collection protocols, stock assessment methods, harvest control rules, enforcement policies and reference points. Typically, closed-loop simulation refers to the use of operating models for testing management procedures (aka. harvest strategy) that are any codifable rule for setting management advice from data. Management Strategy Evaluation is a wider process of stakeholder and manager engagement that identifies system uncertainties, performance metrics, viable management procedures, aiming to adopt an MP for the provision of management advice for an established time period. 
+
+#### Reference Case Operating Models
+
+This document describes the specification of a reference case operating model including links and references to literature. The reference case operating model is used as the single 'base' operating model from which reference set and robustness set operating models are specified. Reference and robustness tests are typically 1-factor departures from the reference case OM, however sometimes reference set OMs are organized in a factorial grid across primary axes of uncertainty. 
+
+#### Reference Set Operating Models
+
+Reference set operating models span a plausible range of the core uncertainties for states of nature. These are often the types of alternative parameterizations or assumptions that would be included in a stock assessment sensitivity analysis. 
+
+The role of the reference set operating models is to provide the central basis for evaluating harvest strategy performance, for example rejecting badly performing harvest strategies. 
+
+#### Robustness Set Operating Models
+
+Robustness set operating models are intended to include additional sources of uncertainty for providing further discrimination among harvest strategies that perform comparably among reference set operating models. 
+
+Robustness operating models often represent system states of nature that are not empirically informed or are hypotheses of a subset of stakeholders.
+
+
 
 ### Geoduck (*Panopea generosa*)
 
-Geoduck operating models were constructed assuming that discrete populations occur at the resolution of Statistical Area (Management Area). Models were conditioned using the Rapid Conditioning Model (RCM) of openMSE (SAMtool package, Huynh et al. 2023) and fitted to historical catches, (vague, nominal) historical catch-per-unit-effort, age composition data, and a current estimate of absolute biomass. Given an assumption of asymptotic fleet selectivity and the availability of the absolute biomass estimate, it was possible to estimate natural mortality rate from a non-informative prior. 
+Geoduck operating models were constructed assuming that discrete populations occur at the resolution of statistical area (management area). Models were conditioned using the Rapid Conditioning Model (RCM) of openMSE (SAMtool package, Huynh et al. 2023) and fitted to historical catches, standardized catch-per-unit-effort, sub area age composition data, a current estimate of absolute biomass and biomass trends within statistical area based on bed-level survey data. Given an assumption of asymptotic fleet selectivity and the availability of the absolute biomass estimate, it was possible to estimate natural mortality rate from a non-informative prior. 
 
-The Reference Case operating model presented here is for Statistical Area 14 which had numerous age-composition data. 
+The Reference Case operating model presented here is for statistical area 14 which had numerous age-composition data. 
 
 MSE-style closed-loop projections were undertaken for the current harvest rate (the principal management guideline) and current catch levels. 
 
 &nbsp;
+
 
 <img src="OM_Descriptions/Figures/Geoduck/Geoduck_areas.jpg" width="300">
 
@@ -144,14 +176,22 @@ Figure 1. Statistical Areas for which age data were available and RCM operating 
 
 &nbsp;
 
-Table 1a. Geoduck RCM model fits 
+Table 1a. Project Updates and Progress
+```{r}
+getprog("Geoduck")
+```
+
+
+&nbsp;
+
+Table 1b. Geoduck RCM model fits 
 ```{r}
 maketab("./OM_Fitting/Geoduck","Statistical Area")
 ```
 
 &nbsp;
 
-Table 1b. Geoduck assumptions and to-do list
+Table 1c. Geoduck assumptions and to-do list
 ```{r}
 getprojectinfo("Geoduck")
 ```
