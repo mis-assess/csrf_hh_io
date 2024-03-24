@@ -43,14 +43,29 @@ file.copy(paste0(frompath,"/Project Info/Progress.xlsx"),paste0(topath,"/Project
 
 paste0(frompath,"/Project Info/Progress.xlsx")
 
-file.copy(paste0(frompath,"/Geoduck Info/Geoduck_IFMP.pdf"),paste0(topath,"/References/Geoduck_IFMP.pdf"),overwrite=T)
-file.copy(paste0(frompath,"/Urchin Info/GSU_IFMP.pdf"),paste0(topath,"/References/GSU_IFMP.pdf"),overwrite=T)
-file.copy(paste0(frompath,"/Sea Cucumber Info/Sea_Cucumber_IFMP.pdf"),paste0(topath,"/References/Sea_Cucumber_IFMP.pdf"),overwrite=T)
-file.copy(paste0(frompath,"/Clam Info/Intertidal_Clams_IFMP.pdf"),paste0(topath,"/References/Intertidal_Clams_IFMP.pdf"),overwrite=T)
+file.copy(paste0(frompath,"/info_geoduck/Geoduck_IFMP.pdf"),paste0(topath,"/References/Geoduck_IFMP.pdf"),overwrite=T)
+file.copy(paste0(frompath,"/info_urchin/GSU_IFMP.pdf"),paste0(topath,"/References/GSU_IFMP.pdf"),overwrite=T)
+file.copy(paste0(frompath,"/info_seacucumber/Sea_Cucumber_IFMP.pdf"),paste0(topath,"/References/Sea_Cucumber_IFMP.pdf"),overwrite=T)
+file.copy(paste0(frompath,"/info_clam/Intertidal_Clams_IFMP.pdf"),paste0(topath,"/References/Intertidal_Clams_IFMP.pdf"),overwrite=T)
 
 
 
 
+# Geoduck specific
+file.copy(paste0(frompath,"/Project Info/2023_11_17_CSRF_Geoduck_Review.pdf"),paste0(topath,"/Project_Info/2023_11_17_CSRF_Geoduck_Review.pdf"),overwrite=T)
 
+# Manilla clam specific
+file.copy(paste0(frompath,"/Project Info/2023_11_20_CSRFManilaClam_Review.pdf"),paste0(topath,"/Project_Info/2023_11_20_CSRFManilaClam_Review.pdf"),overwrite=T)
+
+# Sea Cucumber specific
+file.copy(paste0(frompath,"/Project Info/Draft Summary of Sea Cucumber CSRF Meeting.pdf"),paste0(topath,"/Project_Info/Draft Summary of Sea Cucumber CSRF Meeting.pdf"),overwrite=T)
+
+# Green urchin specific
+file.copy(paste0(frompath,"/Project Info/Draft summary of Urching CSRF Meeting_Feb13, 2024_ Live Notes.pdf"),paste0(topath,"/Project_Info/Draft summary of Urching CSRF Meeting_Feb13, 2024_ Live Notes.pdf"),overwrite=T)
+
+
+
+# General
+file.copy(paste0(frompath,"/Project Info/Custom Analyses 2023-2024.pdf"),paste0(topath,"/Project_Info/Custom Analyses 2023-2024.pdf"),overwrite=T)
 
 

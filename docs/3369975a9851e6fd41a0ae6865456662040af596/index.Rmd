@@ -68,7 +68,6 @@ maketab <- function(dir,Alab="Statistical Area"){
 
 
 getprojectinfo<-function(page){
-  
   tab=as.data.frame(read_excel("Project_Info/Status Assumptions To do.xlsx", sheet = page))
   tab=tab[,2:3]
   tab[is.na(tab)]=""
@@ -77,7 +76,6 @@ getprojectinfo<-function(page){
   
 
 getprog<-function(page){
-  
   tab=as.data.frame(read_excel("Project_Info/Progress.xlsx", sheet = page))
   tab=tab[,2:3]
   tab[is.na(tab)]=""
@@ -125,34 +123,43 @@ kable(dat,"simple",col.names=rep("",2))
 
 ```
 
-
 ***
 
 ### Operating models 
 
-An operating model is a theoretical description of fishery and population dynamics used for the testing of management strategies that could include, for example,  data collection protocols, stock assessment methods, harvest control rules, enforcement policies and reference points. Typically, closed-loop simulation refers to the use of operating models for testing management procedures (aka. harvest strategy) that are any codifable rule for setting management advice from data. Management Strategy Evaluation is a wider process of stakeholder and manager engagement that identifies system uncertainties, performance metrics, viable management procedures, aiming to adopt an MP for the provision of management advice for an established time period. 
+An operating model is a theoretical description of fishery and population dynamics used for the testing of management strategies that could include, for example,  data collection protocols, stock assessment methods, harvest control rules, enforcement policies and reference points. In fisheries, operating models are used in closed-loop simulation to test management procedures (aka. harvest strategy) accounting for feedbacks between the system, data, management procedure and implementation. A management procedure is any codifable rule that calculates management advice from data. Management Strategy Evaluation uses closed-loop simulation of management procedures as a core technical component but is a wider process of stakeholder and manager engagement that identifies system uncertainties, performance metrics, viable management procedures, ultimately aiming to adopt an MP for the provision of management advice for an established time period. 
+
+&nbsp;
 
 #### Reference Case Operating Models
 
-This document describes the specification of a reference case operating model including links and references to literature. The reference case operating model is used as the single 'base' operating model from which reference set and robustness set operating models are specified. Reference and robustness tests are typically 1-factor departures from the reference case OM, however sometimes reference set OMs are organized in a factorial grid across primary axes of uncertainty. 
+The reference case operating model is used as the single 'base' operating model from which reference set and robustness set operating models are specified. Reference and robustness tests are typically 1-factor departures from the reference case OM, however sometimes reference set OMs are organized in a factorial grid across primary axes of uncertainty. 
+
+&nbsp;
 
 #### Reference Set Operating Models
 
 Reference set operating models span a plausible range of the core uncertainties for states of nature. These are often the types of alternative parameterizations or assumptions that would be included in a stock assessment sensitivity analysis. 
 
-The role of the reference set operating models is to provide the central basis for evaluating harvest strategy performance, for example rejecting badly performing harvest strategies. 
+The role of the reference set operating models is to provide the central basis for evaluating the performance of candidate management procedures, for example rejecting badly performing harvest strategies. 
+
+&nbsp;
 
 #### Robustness Set Operating Models
 
-Robustness set operating models are intended to include additional sources of uncertainty for providing further discrimination among harvest strategies that perform comparably among reference set operating models. 
+Robustness set operating models are intended to include additional sources of uncertainty for providing further discrimination among management procedures that perform comparably among reference set operating models. 
 
 Robustness operating models often represent system states of nature that are not empirically informed or are hypotheses of a subset of stakeholders.
 
+&nbsp;
 
+***
 
 ### Geoduck (*Panopea generosa*)
 
-Geoduck operating models were constructed assuming that discrete populations occur at the resolution of statistical area (management area). Models were conditioned using the Rapid Conditioning Model (RCM) of openMSE (SAMtool package, Huynh et al. 2023) and fitted to historical catches, standardized catch-per-unit-effort, sub area age composition data, a current estimate of absolute biomass and biomass trends within statistical area based on bed-level survey data. Given an assumption of asymptotic fleet selectivity and the availability of the absolute biomass estimate, it was possible to estimate natural mortality rate from a non-informative prior. 
+#### Operating Model Specification
+
+Geoduck operating models were constructed assuming that discrete populations occur at the resolution of statistical area (management area). Models were conditioned using the Rapid Conditioning Model (RCM) of openMSE (SAMtool package, Huynh et al. 2023) and fitted to historical catches, standardized catch-per-unit-effort, sub area age composition data, a current estimate of absolute biomass and biomass trends within statistical area based on bed-level survey data. Given an assumption of asymptotic fleet selectivity and the availability of the absolute biomass estimate, it was possible to estimate natural mortality rate from an informative prior. 
 
 The Reference Case operating model presented here is for statistical area 14 which had numerous age-composition data. 
 
@@ -167,26 +174,43 @@ Figure 1. Statistical Areas for which age data were available and RCM operating 
 
 &nbsp;
 
+#### Reference Case Operating Model
 
 [Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Geoduck_Annotated.html)
 
+&nbsp;
+
+#### Comparison of Stat Area Operating Models
+
+Across the 22 Stat. areas for which age-data were available and models could be conditioned to data
+
 [Stat Area Comparisons (.html)](Comparisons/Geoduck_Area_Comparison.html)
 
-[Closed-loop MSE-type projections (.html)](MSEs/Geoduck_Demo_MSE.html)
-
 &nbsp;
 
-Table 1a. Project Updates and Progress
-```{r}
-getprog("Geoduck")
-```
-
-
-&nbsp;
-
-Table 1b. Geoduck RCM model fits 
+Table 1a. Geoduck RCM model fits 
 ```{r}
 maketab("./OM_Fitting/Geoduck","Statistical Area")
+```
+
+&nbsp;
+
+#### Custom Analyses
+
+A summary of the 2024 custom analyses for all species is available [here](Project_Info/Custom Analyses 2023-2024.pdf)
+
+[Some initial closed-loop MSE-type projections were also conducted](MSEs/Geoduck_Demo_MSE.html)
+
+&nbsp;
+
+
+#### Project Status
+
+&nbsp;
+
+Table 1b. Project Updates and Progress
+```{r}
+getprog("Geoduck")
 ```
 
 &nbsp;
@@ -196,9 +220,106 @@ Table 1c. Geoduck assumptions and to-do list
 getprojectinfo("Geoduck")
 ```
 
+&nbsp;
+
+#### Geoduck Meeting Notes etc
+
+[2023 Meeting Notes (.pdf)](Project_Info/2023_11_17_CSRF_Geoduck_Review.pdf)
+
+&nbsp;
+
+***
+
+### Manila Clam (*Venerupis philippinarum*)
+
+
+#### Operating Model Specification
+
+Manila clam operating were conditioned to historical catches from 1999 onwards. The model assumes an equilibrium annual catch equal to 75% of the mean catch from 1999-2003. 
+
+The model is fitted to a CMA-level annual time series of survey densities. This was calculated by aggregating density estimates from beaches, where the beach-level data include linear interpolation among years with observed data, and constant extrapolation before and after the first and last observed years, respectively. 
+
+The model was also fitted to fishery length composition data and survey age composition (annulus data). In both cases the selectivities were assumed to be logistic. The fishery selectivity function was parameterized by length, the survey selectivity was parameterized by age. Somatic growth and weight-length parameters were sampled from a multivariate normal distribution arising from variance-covariance matrix of parameter estimates from an MLE fit to annulus data by Statistical Area. 
+
+Since the available data only very weakly inform depletion, the models are configured with an additional prior on current stock depletion for testing robustness of management options to varying levels of stock status.
+
+The operating models were fitted using the [Rapid Conditioning Model (RCM)](https://samtool.openmse.com/reference/RCM.html) included in the openMSE framework. 
+
+
+&nbsp;
+
+<img src="OM_Descriptions/Figures/Manila_Clam/Manila_Clam_areas.jpg" width="300">
+
+Figure 2. Location of Clam Management Areas. 
+
+&nbsp;
+
+
+
+#### Comparison of Operating Models Across CMAs
+
+
+Across the 4 Clam Management Areas for which age-data were available and models could be conditioned to data
+
+[Stat Area Comparisons (.html)](Comparisons/Manila_Clam_Area_Comparison.html)
+
+&nbsp;
+
+Table 2a. Manila Clam RCM model fits 
+```{r}
+maketab("./OM_Fitting/Manila_Clam","Statistical Area")
+```
+
+&nbsp;
+
+
+#### Reference Case Operating Model
+
+[Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Manila_Clam_Annotated.html)
+
+&nbsp;
+
+
+#### Custom Analyses
+
+An investigation of minimum size limits and rebuilding was conducted and is documented [here](Project_Info/Custom Analyses 2023-2024.pdf)
+
+[Example closed-loop MSE-type projections were also conducted (.html)](MSEs/Manila_Clam_Demo_MSE.html)
+
+&nbsp;
+
+#### Project Status
+
+
+Table 2b. Project Updates and Progress
+```{r}
+getprog("Manila_Clam")
+```
+
+&nbsp;
+
+Table 2c. Manila clam assumptions and to-do list
+```{r}
+getprojectinfo("Manila_Clam")
+```
+
+&nbsp;
+
+#### Manilla Clam Meeting Notes etc
+
+[2023 Meeting Notes (.pdf)](Project_Info/2023_11_20_CSRFManilaClam_Review.pdf)
+
+
+
+
+&nbsp;
+
 ***
 
 ### Green Sea Urchin (*Strongylocentrotus droebachiensis*)
+
+
+#### Operating Model Specification
 
 Green Urchin operating models were constructed assuming that discrete populations occur at the resolution of Statistical Area (Management Area). Models were conditioned using RCM and fitted to historical catches, historical nominal catch-per-unit-effort, a survey relative abundance index and fleet and survey length composition data. 
 
@@ -210,117 +331,141 @@ MSE-style closed-loop projections were undertaken for the current harvest rate (
 
 <img src="OM_Descriptions/Figures/Green_Urchin/GSU_areas.jpg" width="300">
 
-Figure 2. Statistical Areas for which composition data and recent catches were available and RCM operating models were fitted. 
+Figure 3. Statistical Areas for which composition data and recent catches were available and RCM operating models were fitted. 
 
 &nbsp;
 
-[Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Green_Urchin_Annotated.html)
+#### Comparison of Stat Area Operating Models
 
 [Stat Area Comparisons (.html)](Comparisons/Green_Urchin_Area_Comparison.html)
 
-[Closed-loop MSE-type projections (.html)](MSEs/Green_Urchin_Demo_MSE.html)
+
 
 &nbsp;
 
-Table 2a. Green Urchin RCM model fits 
+Table 3a. Green Urchin RCM model fits 
 ```{r}
 maketab("./OM_Fitting/Green_Urchin","Statistical Area")
+```
+&nbsp;
+
+
+#### Reference Case Operating Model
+
+[Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Green_Urchin_Annotated.html)
+
+&nbsp;
+
+
+#### Custom Analyses
+
+The results of demonstration analyses is documented [here](Project_Info/Custom Analyses 2023-2024.pdf)
+
+[Also conducted were some example closed-loop MSE-type projections (.html)](MSEs/Green_Urchin_Demo_MSE.html)
+ 
+&nbsp;
+
+#### Project Status
+
+Table 3b. Project Updates and Progress
+```{r}
+getprog("Green_Urchin")
 ```
 
 &nbsp;
 
-Table 2b. Green urchin assumptions and to-do list
+Table 3c. Green urchin assumptions and to-do list
 ```{r}
 getprojectinfo("Green_Urchin")
 ```
 
+&nbsp;
+
+#### Green Sea Urchin Meeting Notes etc. 
+
+[Feb 2024 Meeting Notes (.pdf)](Project_Info/Draft summary of Urching CSRF Meeting_Feb13, 2024_ Live Notes.pdf)
+ 
+
+
+&nbsp;
+
 ***
-
-
+ 
 ### Giant Red Sea Cucumber (*Apostichopus californicus*)
 
-Sea cucumber operating models were configured to be numbers-based due to the inability to age sea cucumbers and representatively measure/weigh them. This entails the following working assumptions: knife-edge growth to size / weight 1 at age 2; Recruitment based on a Beverton-Holt S-R relationship calculated from mature numbers (although this can be modified later); Asymptotic selectivity from a young age class (e.g. age 4-7).
+
+#### Operating Model Specification
+
+Sea cucumber operating models were configured to be numbers-based due to the inability to age sea cucumbers and representatively measure/weigh them. This entails the following working assumptions: knife-edge growth to size / weight 1 at age 2; Recruitment based on a Beverton-Holt S-R relationship calculated from mature numbers (the model includes a fecundity growth parameter k where fecundity follows a cubic relationship); Asymptotic selectivity from a young age class (e.g. age 4-7).
 
 Since harvesting is by diver and highly selective, regulation is by harvest rate and bag-limit,  the numbers-based operating model is potentially appropriate for the management regime but requires realistic modelling of the bag-limit impacts on discard rate and size selectivity.
 
-Models were conditioned using RCM and fitted to historical catches, an estimate of absolute biomass, and a time series of survey density estimates.  
-
-The Reference Case operating model presented here is for Quota Management Area 25A (Nootka / Tahsis on the WCVI, Subareas 25-6, 25-8, 25-9, 25-12, 25-15) which was selected for its relatively long history of density surveys and recent reopening in 2020.
-
-MSE-style closed-loop projections were undertaken for the current harvest rate, current catch levels and six example management procedures that aim for 2.2, 4.2 and 6.7% harvest rates without alternating closures (C_22, C_42, C_67) and also with alternating closures (Alt_22, Alt_42, Alt_67) whereby the QMA is closed and opened every other projection year. 
+Models were conditioned using RCM and fitted to historical catch in numbers, an estimate of absolute numbers, and a time series of survey density estimates.  
 
 
 &nbsp;
 
 <img src="OM_Descriptions/Figures/Sea_Cucumber/Sea_Cucumber_areas.jpg" width="300">
 
-Figure 1. Location of historical Sea Cucumber harvests. 
+Figure 4. Location of historical Sea Cucumber harvests. 
 
 &nbsp;
 
+#### Reference Case Operating Model
 
 [Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Sea_Cucumber_Annotated.html)
 
-[QMA Comparisons (.html)](Comparisons/Sea_Cucumber_Area_Comparison.html)
+&nbsp;
 
-[Closed-loop MSE-type projections (.html)](MSEs/Sea_Cucumber_Demo_MSE.html)
+#### Area comparisons among Subareas (revised for 2024 from QMA) 
+
+[Subarea Comparisons (.html)](Comparisons/Sea_Cucumber_Area_Comparison.html)
+
+
 
 &nbsp;
 
-Table 3a. Sea cucumber RCM model fits 
+Table 4a. Sea cucumber RCM model fits 
 ```{r}
-maketab("./OM_Fitting/Sea_Cucumber","Quota Management Area")
+maketab("./OM_Fitting/Sea_Cucumber","Subarea")
+```
+
+
+
+&nbsp;
+
+#### Custom Analyses
+
+In 2023, MSE-style closed-loop projections were undertaken for the current harvest rate, current catch levels and six example management procedures that aim for 2.2, 4.2 and 6.7% harvest rates without alternating closures (C_22, C_42, C_67) and also with alternating closures (Alt_22, Alt_42, Alt_67) whereby the QMA is closed and opened every other projection year. 
+
+The results of these demonstration analyses is documented [here](Project_Info/Custom Analyses 2023-2024.pdf)
+
+&nbsp;
+
+
+#### Project Status
+
+Table 4b. Project Updates and Progress
+```{r}
+getprog("Sea_Cucumber")
 ```
 
 &nbsp;
 
-Table 3b. Sea cucumber assumptions and to-do list
+Table 4c. Green urchin assumptions and to-do list
 ```{r}
 getprojectinfo("Sea_Cucumber")
 ```
 
-***
-
-### Manila Clam (*Venerupis philippinarum*)
-
-Given the current unavailability of harvest data (I did not have time to pursue it!) a scale-free operating model was conditioned on recent fleet composition data using RCM, assuming stable recent fishing effort (exploitation rate) and asymptotic (flat-topped) selectivity (i.e. comparable to a non-equilibrium length based assessment approach such as non-eq LBSPR (Hordyk et al.).
-
-The Reference Case operating model presented here is for beach 17-19-002 which has relatively numerous length samples.  
-
-MSE-style closed-loop projections were undertaken for the current harvest rate and current catch levels. 
-
-
-&nbsp;
-
-<img src="OM_Descriptions/Figures/Manila_Clam/Manila_Clam_areas.jpg" width="300">
-
-Figure 1. Location of beaches where manila clams are surveyed. 
-
 &nbsp;
 
 
-[Reference Case Operating Model Description (.html)](OM_Descriptions/Ref_Case_Manila_Clam_Annotated.html)
+#### Sea Cucumber Meeting Notes etc
 
-[Beach Comparisons (.html)](Comparisons/Manila_Clam_Area_Comparison.html)
-
-[Closed-loop MSE-type projections (.html)](MSEs/Manila_Clam_Demo_MSE.html)
-
+[Feb 2024 Meeting Notes (.pdf)](Project_Info/Draft Summary of Sea Cucumber CSRF Meeting.pdf)
 
 
 &nbsp;
-
-Table 4a. Manila clam RCM model fits 
-```{r}
-maketab("./OM_Fitting/Manila_Clam","Beach")
-```
-
-&nbsp;
-
-Table 4b. Manila clam assumptions and to-do list
-```{r}
-getprojectinfo("Manila_Clam")
-```
-
 
 ***
 
@@ -333,6 +478,19 @@ getprojectinfo("Manila_Clam")
 [Rapid Conditioning Model (RCM) (Huynh 2023)](https://samtool.openmse.com/reference/RCM.html)
 
 
+
+***
+
+
+### Recent Presentations
+
+[Geoduck Nov 2023 (.pdf)](Presentations/Geoduck v2.pdf)
+
+[Manilla Clam Nov 2023 (.pdf)](Presentations/Manilla Clam v4.pdf)
+
+[Cucumber Feb 2024 (.pdf)](Presentations/Cucumber 3.pdf)
+
+[Urchin Feb 2024 (.pdf)](Presentations/Urchin 4.pdf)
 
 ***
 
@@ -352,15 +510,26 @@ getprojectinfo("Manila_Clam")
 
 ### Acknowledgements
 
+Many thanks to Shannon Obradovich and Mackenzie Mazur for helping to direct and manage the research project. 
+
 Special thanks to Rob Flemming for his help in providing and explaining the various datasets and also to Dominique Bureau for providing guidance on data interpretation and reviewing materials. 
 
-Geoduck collaborators: Erin Porszt, Dominique Bureau
+Thanks to Ken Fong for his overview and expertise on the historical aspects of the fisheries, science and management programmes. 
 
-Green urchin collaborators: Lyanne Curtis, Christine Hansen
+Many thanks also to the contribution of individuals on the species-specific analyses: 
 
-Sea cucumber collaborators: Jill Campbell, Christine Hansen
+(Technical support)  Meghan Burton; Mackenzie Mazur; Kelsey Dougan; 
 
-Manila clam collaborators: Alexander Dalton, Dominique Bureau
+(Managers) Amy Ganton, Brittany Myhal, Pauline Ridings, Jenny Smith, Erin Wylie;
+
+(Geoduck collaborators)  Erin Porszt, Dominique Bureau;
+
+(Manila clam collaborators) Alexander Dalton, Dominique Bureau, Coral Cargill;
+
+(Green urchin collaborators) Lyanne Curtis, Christine Hansen, Travis Bell; 
+
+(Sea cucumber collaborators) Jill Campbell, Christine Hansen, Erin Wylie, Travis Bell;
+
 
 ***
 
