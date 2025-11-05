@@ -2,8 +2,7 @@
 title: "Informing Management of B.C. Hand-Harvested Invertebrates: Operating Models, MPs and MSE"
 author: "Tom Carruthers <tom@bluematterscience.com>"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: html_document
-always_allow_html: yes
+output: pdf_document
 ---
 &nbsp;
 
@@ -28,16 +27,14 @@ always_allow_html: yes
 
 ***
 
-<img src="img/Front Page.jpg" width = 910>
 
-***
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics("img/Front Page.jpg")
+```
 
-&nbsp;
-
-<img src="img/BM.jpg" width="140">
-<img src="img/openMSE.jpg" width="150">
-<img src="img/DFO.png" width="140">
-
+```{r, out.width="0.35\\linewidth", include=TRUE, fig.align="left", echo=FALSE}
+knitr::include_graphics("img/logos for tech report.png")
+```
 
 
 ***
@@ -55,15 +52,19 @@ maketab <- function(dir,Alab="Statistical Area"){
   DF = data.frame(filenam)
   names(DF) = c("Area")
   #filepath = list.files(dir, full.names = T, include.dirs = T)
-  fit.link = paste0('<a href=', file.path(dir, filenam), '> ', DF$Area , ' </a>')
+  fit.link =DF$Area # paste0('<a href=', file.path(dir, filenam), '> ', DF$Area , ' </a>')
   DF$Area <- fit.link
-  DT::datatable(DF, escape=1,
-                colnames=c(Alab),
-                filter = 'top',
-                options = list(
-                  pageLength = 10, 
-                  autoWidth = TRUE,
-                  sDom  = '<"top">lrt<"bottom">ip'))
+  kable(DF,"latex")|>
+  kable_styling(font_size = 10,
+                latex_options = c("hold_position"))|>
+     row_spec(0,bold=TRUE)
+  #DT::datatable(DF, escape=1,
+   #             colnames=c(Alab),
+    #            filter = 'top',
+     #           options = list(
+      #            pageLength = 10, 
+       #           autoWidth = TRUE,
+        #          sDom  = '<"top">lrt<"bottom">ip'))
 }
 
 
@@ -72,7 +73,11 @@ getprojectinfo<-function(page){
   tab=as.data.frame(read_excel("Project_Info/Status Assumptions To do.xlsx", sheet = page))
   tab=tab[,2:3]
   tab[is.na(tab)]=""
-  kable(tab,"simple")#,col.names=rep("",2)) 
+  kable(tab,"latex")|>
+  kable_styling(font_size = 10)|> 
+    column_spec(1, width =   "5cm")|>
+    column_spec(2, width =   "10cm")|>
+     row_spec(0,bold=TRUE)
 }
   
 
@@ -80,7 +85,11 @@ getprog<-function(page){
   tab=as.data.frame(read_excel("Project_Info/Progress.xlsx", sheet = page))
   tab=tab[,2:3]
   tab[is.na(tab)]=""
-  kable(tab,"simple")#,col.names=rep("",2)) 
+  kable(tab,"latex")|>
+  kable_styling(font_size = 10)|> 
+    column_spec(1, width =   "5cm")|>
+    column_spec(2, width =   "10cm")|>
+    row_spec(0,bold=TRUE)
 }
   
 
@@ -99,6 +108,12 @@ These analyses do not necessarily reflect the point of view of DFO or other fund
 
 ***
 
+### Interactive Report
+
+This Technical Report documents the various components of the Invertebrates Decision Framework. However, due to the complexity of all of the underlying components, it was originally designed as an interactive html document with links to the various supporting reports, figures and documents. The interactive version can be found  [here](https://mis-assess.github.io/csrf_hh_io/3369975a9851e6fd41a0ae6865456662040af596/index.html)
+
+***
+
 ### Objective
 
 Establish operating models for at least four species of hand-harvested invertebrates in B.C. for the purposes of informing management decision making including data collection, suitable stock assessment approaches, reference points and harvest control rules.  
@@ -110,7 +125,7 @@ Establish operating models for at least four species of hand-harvested invertebr
 ```{r ProjDets, eval=T}
 dat<-data.frame(c("Term","Funding body","Funding stream","Solicitation No.","Contract No.","Project Partners","Blue Matter Team","DFO Principal Investigators"),
                 
-                 c("April 2022 - March 2023, April 2023 - March 2024, April 2024 - March 2025",
+                 c("April 2022 - March 2023, April 2023 - March 2024, May 2024 - March 2025",
                    "Canadian Department of Fisheries and Oceans (DFO)",
                    "ProServices, Medium Complexity Bid",
                    "30003600, 30004307",
@@ -168,10 +183,11 @@ MSE-style closed-loop projections were undertaken for the current harvest rate (
 
 &nbsp;
 
+```{r, out.width="0.6\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Statistical Areas for which age data were available and RCM operating models were fitted"), echo=FALSE}
+knitr::include_graphics("OM_Descriptions/Figures/Geoduck/Geoduck_areas.jpg")
+```
 
-<img src="OM_Descriptions/Figures/Geoduck/Geoduck_areas.jpg" width="300">
 
-Figure 1. Statistical Areas for which age data were available and RCM operating models were fitted. 
 
 &nbsp;
 
@@ -231,6 +247,7 @@ getprojectinfo("Geoduck")
 
 ***
 
+
 ### Manila Clam (*Venerupis philippinarum*)
 
 
@@ -247,18 +264,14 @@ Since the available data only very weakly inform depletion, the models are confi
 The operating models were fitted using the [Rapid Conditioning Model (RCM)](https://samtool.openmse.com/reference/RCM.html) included in the openMSE framework. 
 
 
-&nbsp;
-
-<img src="OM_Descriptions/Figures/Manila_Clam/Manila_Clam_areas.jpg" width="300">
-
-Figure 2. Location of Clam Management Areas. 
+```{r, out.width="0.6\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Location of Clam Management Areas."), echo=FALSE}
+knitr::include_graphics("OM_Descriptions/Figures/Manila_Clam/Manila_Clam_areas_CMA.jpg")
+```
 
 &nbsp;
-
 
 
 #### Comparison of Operating Models Across CMAs
-
 
 Across the 4 Clam Management Areas for which age-data were available and models could be conditioned to data
 
@@ -291,6 +304,7 @@ An investigation of minimum size limits and rebuilding was conducted and is docu
 
 #### Project Status
 
+\clearpage
 
 Table 2b. Project Updates and Progress
 ```{r}
@@ -299,7 +313,10 @@ getprog("Manila_Clam")
 
 &nbsp;
 
+\clearpage
+
 Table 2c. Manila clam assumptions and to-do list
+
 ```{r}
 getprojectinfo("Manila_Clam")
 ```
@@ -312,10 +329,10 @@ getprojectinfo("Manila_Clam")
 
 
 
-
 &nbsp;
 
 ***
+
 
 ### Green Sea Urchin (*Strongylocentrotus droebachiensis*)
 
@@ -330,9 +347,12 @@ MSE-style closed-loop projections were undertaken for the current harvest rate (
 
 &nbsp;
 
-<img src="OM_Descriptions/Figures/Green_Urchin/GSU_areas.jpg" width="300">
 
-Figure 3. Statistical Areas for which composition data and recent catches were available and RCM operating models were fitted. 
+```{r, out.width="0.6\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Statistical Areas for which composition data and recent catches were available and RCM operating models were fitted."), echo=FALSE}
+knitr::include_graphics("OM_Descriptions/Figures/Green_Urchin/GSU_areas.jpg")
+```
+
+
 
 &nbsp;
 
@@ -341,8 +361,9 @@ Figure 3. Statistical Areas for which composition data and recent catches were a
 [Stat Area Comparisons (.html)](Comparisons/Green_Urchin_Area_Comparison.html)
 
 
-
 &nbsp;
+
+
 
 Table 3a. Green Urchin RCM model fits 
 ```{r}
@@ -406,9 +427,11 @@ Models were conditioned using RCM and fitted to historical catch in numbers, an 
 
 &nbsp;
 
-<img src="OM_Descriptions/Figures/Sea_Cucumber/Sea_Cucumber_areas.jpg" width="300">
 
-Figure 4. Location of historical Sea Cucumber harvests. 
+```{r, out.width="0.6\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Location of historical Sea Cucumber harvests."), echo=FALSE}
+knitr::include_graphics("OM_Descriptions/Figures/Sea_Cucumber/Sea_Cucumber_areas.jpg")
+```
+
 
 &nbsp;
 
@@ -430,7 +453,6 @@ Table 4a. Sea cucumber RCM model fits
 ```{r}
 maketab("./OM_Fitting/Sea_Cucumber","Subarea")
 ```
-
 
 
 &nbsp;
@@ -535,4 +557,5 @@ Many thanks also to the contribution of individuals on the species-specific anal
 ***
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 

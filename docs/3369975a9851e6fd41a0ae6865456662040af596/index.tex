@@ -1,0 +1,847 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Informing Management of B.C. Hand-Harvested Invertebrates: Operating Models, MPs and MSE},
+  pdfauthor={Tom Carruthers tom@bluematterscience.com},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Informing Management of B.C. Hand-Harvested Invertebrates:
+Operating Models, MPs and MSE}
+\author{Tom Carruthers
+\href{mailto:tom@bluematterscience.com}{\nolinkurl{tom@bluematterscience.com}}}
+\date{16 March, 2025}
+
+\begin{document}
+\maketitle
+
+~
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+~
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Disclaimer}\label{disclaimer}
+
+The following work is preliminary and intended only as tool for
+eliciting feedback on data, modelling and other aspects of these
+fisheries.
+
+None of these results are final.
+
+These analyses do not necessarily reflect the point of view of DFO or
+other funders and in no way anticipate DFO future policy in this area.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Objective}\label{objective}
+
+Establish operating models for at least four species of hand-harvested
+invertebrates in B.C. for the purposes of informing management decision
+making including data collection, suitable stock assessment approaches,
+reference points and harvest control rules.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Project details}\label{project-details}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Term & April 2022 - March 2023, April 2023 - March 2024, April 2024 -
+March 2025 \\
+Funding body & Canadian Department of Fisheries and Oceans (DFO) \\
+Funding stream & ProServices, Medium Complexity Bid \\
+Solicitation No. & 30003600, 30004307 \\
+Contract No. & 4500038008, 4500051010, 4600000482 \\
+Project Partners & Blue Matter Science Ltd. \\
+Blue Matter Team & Tom Carruthers, Adrian Hordyk, Quang Huynh \\
+DFO Principal Investigators & Shannon Obradovich, Mackenzie Mazur \\
+\end{longtable}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Operating models}\label{operating-models}
+
+An operating model is a theoretical description of fishery and
+population dynamics used for the testing of management strategies that
+could include, for example, data collection protocols, stock assessment
+methods, harvest control rules, enforcement policies and reference
+points. In fisheries, operating models are used in closed-loop
+simulation to test management procedures (aka. harvest strategy)
+accounting for feedback among the system, data, management procedure and
+implementation. A management procedure is a rule that calculates
+management advice from data. Management Strategy Evaluation uses
+closed-loop simulation of management procedures as a core technical
+component but is a wider process of stakeholder and manager engagement
+that identifies system uncertainties, performance metrics, viable
+management procedures, ultimately aiming to adopt an MP for the
+provision of management advice for an established time period.
+
+~
+
+\paragraph{Reference Case Operating
+Models}\label{reference-case-operating-models}
+
+The reference case operating model is used as the single `base'
+operating model from which reference set and robustness set operating
+models are specified. Reference and robustness tests are typically
+1-factor departures from the reference case OM, however sometimes
+reference set OMs are organized in a factorial grid across primary axes
+of uncertainty.
+
+~
+
+\paragraph{Reference Set Operating
+Models}\label{reference-set-operating-models}
+
+Reference set operating models span a plausible range of the core
+uncertainties for states of nature. These are often the types of
+alternative parameterizations or assumptions that would be included in a
+stock assessment sensitivity analysis.
+
+The role of the reference set operating models is to provide the central
+basis for evaluating the performance of candidate management procedures,
+for example rejecting badly performing harvest strategies.
+
+~
+
+\paragraph{Robustness Set Operating
+Models}\label{robustness-set-operating-models}
+
+Robustness set operating models are intended to include additional
+sources of uncertainty for providing further discrimination among
+management procedures that perform comparably among reference set
+operating models.
+
+Robustness operating models often represent system states of nature that
+are not empirically informed or are hypotheses of a subset of
+stakeholders.
+
+~
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{\texorpdfstring{Geoduck (\emph{Panopea
+generosa})}{Geoduck (Panopea generosa)}}\label{geoduck-panopea-generosa}
+
+\paragraph{Operating Model
+Specification}\label{operating-model-specification}
+
+Geoduck operating models were constructed assuming that discrete
+populations occur at the resolution of statistical area (management
+area). Models were conditioned using the Rapid Conditioning Model (RCM)
+of openMSE (SAMtool package, Huynh et al.~2023) and fitted to historical
+catches, standardized catch-per-unit-effort, sub area age composition
+data, a current estimate of absolute biomass and biomass trends within
+statistical area based on bed-level survey data. Given an assumption of
+asymptotic fleet selectivity and the availability of the absolute
+biomass estimate, it was possible to estimate natural mortality rate
+from an informative prior.
+
+The Reference Case operating model presented here is for statistical
+area 14 which had numerous age-composition data.
+
+MSE-style closed-loop projections were undertaken for the current
+harvest rate (the principal management guideline) and current catch
+levels.
+
+~
+
+Figure 1. Statistical Areas for which age data were available and RCM
+operating models were fitted.
+
+~
+
+\paragraph{Reference Case Operating
+Model}\label{reference-case-operating-model}
+
+\href{OM_Descriptions/Ref_Case_Geoduck_Annotated.html}{Reference Case
+Operating Model Description (.html)}
+
+~
+
+\paragraph{Comparison of Stat Area Operating
+Models}\label{comparison-of-stat-area-operating-models}
+
+Across the 22 Stat. areas for which age-data were available and models
+could be conditioned to data
+
+\href{Comparisons/Geoduck_Area_Comparison.html}{Stat Area Comparisons
+(.html)}
+
+~
+
+Table 1a. Geoduck RCM model fits
+
+~
+
+\paragraph{Custom Analyses}\label{custom-analyses}
+
+A summary of the 2024 custom analyses for all species is available
+\href{Project_Info/Custom\%20Analyses\%202023-2024.pdf}{here}
+
+\href{MSEs/Geoduck_Demo_MSE.html}{Some initial closed-loop MSE-type
+projections were also conducted}
+
+~
+
+\paragraph{Project Status}\label{project-status}
+
+~
+
+Table 1b. Project Updates and Progress
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Update & Details \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Hierarchical growth model & M. Burton (DFO) developed a hierarchical
+model in TMB / stan for estimating Stat. area growth parameters. MCMC
+samples are now used in the operating models \\
+Current absolute biomass & Data were updated to 2022 and current
+absolute biomass estimates (only absolute index) are now used to inform
+the model \\
+Bed-level trends & Bed-level biomass survey time series are used to
+inform the trend in recent biomass. This includes up to 10 individual
+bed indices or those that encompass 80\% of surveyed biomass (calculated
+by the mean value per bed over all years) \\
+Standardized catch per unit effort & Dr M. Mazur (DFO) developed a
+generalized linear model to standardize commercial catch data according
+to various variates. The model included temporal autocorrelation to
+prevent the estimation of large, implausible differences in inferred
+abundance. \\
+Selectivity parameterized by age & After around age 10, geoduck reach
+close to their asymptotic length. Parameterizing operating models
+according to age is necessary to fit the age composition data. \\
+Age composition disaggregated & In order to account for regional
+variation in age structure, the age composition data are disaggregated
+by subarea. All are assigned dome-shaped selectivity except the sub area
+with the highest mean age which is assigned logistic `flat-topped'
+selectivity. \\
+Natural mortality prior & Given the absolute biomass survey and age
+composition data it is possible to estimate natural mortality. This is
+assigned an informative prior of mean 0.05 with a CV of 15\%. \\
+Lognormal likelihood for age data & The model is now fitted to age
+composition data with a lognormal likelhood function - this reduces the
+tendency for the model to estimate occasional high recruitments from a
+single year of data. \\
+Truncated age composition data & Only age composition data after 1990
+are used in operating model conditioning \\
+\end{longtable}
+
+~
+
+Table 1c. Geoduck assumptions and to-do list
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Assumptions & To Do \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Stat. Area is the biological unit & Make generic management performance
+outputs \\
+Commercial Catch CV of 5\% & Add correct coords to OM objects by stat
+area \\
+Annual age data effective sample size of 40 & Make a coastwide OM by
+aggregating data \\
+5\% Selectivity at 100mm, full selectivity at 120mm (all Stat Areas) &
+Test open-closure rules \\
+Informative M prior of 0.05 with CV of 15\% & Work on calculation of
+coast-wide LRP \\
+Absolute biomass estimates are only final historical year & Test
+efficacy of small-scale spatial closures \\
+Somatic Growth follows a von-B growth equation & Robustness (M,
+unreported catches, somatic growth, rec strength) \\
+Maturity is from 2003 study & \\
+\end{longtable}
+
+~
+
+\paragraph{Geoduck Meeting Notes etc}\label{geoduck-meeting-notes-etc}
+
+\href{Project_Info/2023_11_17_CSRF_Geoduck_Review.pdf}{2023 Meeting
+Notes (.pdf)}
+
+~
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{\texorpdfstring{Manila Clam (\emph{Venerupis
+philippinarum})}{Manila Clam (Venerupis philippinarum)}}\label{manila-clam-venerupis-philippinarum}
+
+\paragraph{Operating Model
+Specification}\label{operating-model-specification-1}
+
+Manila clam operating were conditioned to historical catches from 1999
+onwards. The model assumes an equilibrium annual catch equal to 75\% of
+the mean catch from 1999-2003.
+
+The model is fitted to a CMA-level annual time series of survey
+densities. This was calculated by aggregating density estimates from
+beaches, where the beach-level data include linear interpolation among
+years with observed data, and constant extrapolation before and after
+the first and last observed years, respectively.
+
+The model was also fitted to fishery length composition data and survey
+age composition (annulus data). In both cases the selectivities were
+assumed to be logistic. The fishery selectivity function was
+parameterized by length, the survey selectivity was parameterized by
+age. Somatic growth and weight-length parameters were sampled from a
+multivariate normal distribution arising from variance-covariance matrix
+of parameter estimates from an MLE fit to annulus data by Statistical
+Area.
+
+Since the available data only very weakly inform depletion, the models
+are configured with an additional prior on current stock depletion for
+testing robustness of management options to varying levels of stock
+status.
+
+The operating models were fitted using the
+\href{https://samtool.openmse.com/reference/RCM.html}{Rapid Conditioning
+Model (RCM)} included in the openMSE framework.
+
+~
+
+Figure 2. Location of Clam Management Areas.
+
+~
+
+\paragraph{Comparison of Operating Models Across
+CMAs}\label{comparison-of-operating-models-across-cmas}
+
+Across the 4 Clam Management Areas for which age-data were available and
+models could be conditioned to data
+
+\href{Comparisons/Manila_Clam_Area_Comparison.html}{Stat Area
+Comparisons (.html)}
+
+~
+
+Table 2a. Manila Clam RCM model fits
+
+~
+
+\paragraph{Reference Case Operating
+Model}\label{reference-case-operating-model-1}
+
+\href{OM_Descriptions/Ref_Case_Manila_Clam_Annotated.html}{Reference
+Case Operating Model Description (.html)}
+
+~
+
+\paragraph{Custom Analyses}\label{custom-analyses-1}
+
+An investigation of minimum size limits and rebuilding was conducted and
+is documented
+\href{Project_Info/Custom\%20Analyses\%202023-2024.pdf}{here}
+
+\href{MSEs/Manila_Clam_Demo_MSE.html}{Example closed-loop MSE-type
+projections were also conducted (.html)}
+
+~
+
+\paragraph{Project Status}\label{project-status-1}
+
+Table 2b. Project Updates and Progress
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Update & Details \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Goes to 2022 & All data sources updated to 2022 \\
+Includes IFMP survey data & Most recent data points were included which
+allow for use of the index in simulated projections (as a basis for
+responsive management) \\
+Age composition data & From annulus data, now included and assumed to be
+linked to the survey index series. \\
+Placeholder for fishery effort data & Model can be configured to include
+a metric of exploitation rate based on slip data (effort days). \\
+\end{longtable}
+
+~
+
+Table 2c. Manila clam assumptions and to-do list
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Assumptions & To Do \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Logistic (length - based) selectivity for the fleet & Investigate use of
+effort slip data (managers). \\
+Logistic (age-based) selectivity for the survey & Investigate
+sensitivity to use of somatic growth derived from biological sampling
+(as opposed to annulus data) \\
+Equilibrium catches are 75\% the average of 1999-2003 & Sensitivity
+alternative assumptions about `spool-up' equilibrium catches. \\
+& Demonstrate robustness of current size limit management (much greater
+than size at maturity). \\
+& Sketch historical catch patterns (expert judgment) \\
+& Tactical management options at the beach-level. E.g. open/closure
+rules based on density \\
+& Robustness to winter-kill / summar-kill events \\
+& Develop OMs at varying spatial scales (e.g.~beach) \\
+& Investigate possible uses of ICMP and its requirements (precision
+etc) \\
+\end{longtable}
+
+~
+
+\paragraph{Manilla Clam Meeting Notes
+etc}\label{manilla-clam-meeting-notes-etc}
+
+\href{Project_Info/2023_11_20_CSRFManilaClam_Review.pdf}{2023 Meeting
+Notes (.pdf)}
+
+~
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{\texorpdfstring{Green Sea Urchin
+(\emph{Strongylocentrotus
+droebachiensis})}{Green Sea Urchin (Strongylocentrotus droebachiensis)}}\label{green-sea-urchin-strongylocentrotus-droebachiensis}
+
+\paragraph{Operating Model
+Specification}\label{operating-model-specification-2}
+
+Green Urchin operating models were constructed assuming that discrete
+populations occur at the resolution of Statistical Area (Management
+Area). Models were conditioned using RCM and fitted to historical
+catches, historical nominal catch-per-unit-effort, a survey relative
+abundance index and fleet and survey length composition data.
+
+The Reference Case operating model presented here is for Statistical
+Area 12 which has numerous data and corresponds with a reasonably large
+harvest of urchin.
+
+MSE-style closed-loop projections were undertaken for the current
+harvest rate (the principal management guideline) and current catch
+levels.
+
+~
+
+Figure 3. Statistical Areas for which composition data and recent
+catches were available and RCM operating models were fitted.
+
+~
+
+\paragraph{Comparison of Stat Area Operating
+Models}\label{comparison-of-stat-area-operating-models-1}
+
+\href{Comparisons/Green_Urchin_Area_Comparison.html}{Stat Area
+Comparisons (.html)}
+
+~
+
+Table 3a. Green Urchin RCM model fits
+
+~
+
+\paragraph{Reference Case Operating
+Model}\label{reference-case-operating-model-2}
+
+\href{OM_Descriptions/Ref_Case_Green_Urchin_Annotated.html}{Reference
+Case Operating Model Description (.html)}
+
+~
+
+\paragraph{Custom Analyses}\label{custom-analyses-2}
+
+The results of demonstration analyses is documented
+\href{Project_Info/Custom\%20Analyses\%202023-2024.pdf}{here}
+
+\href{MSEs/Green_Urchin_Demo_MSE.html}{Also conducted were some example
+closed-loop MSE-type projections (.html)}
+
+~
+
+\paragraph{Project Status}\label{project-status-2}
+
+Table 3b. Project Updates and Progress
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Update & Details \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Catches incorporated to inform model scale & Models updated to include
+catch history \\
+Model includes nominal CPUE & This is a placeholder for standardized
+CPUE in a revision of the models \\
+Multispecies survey density included & To allow for the testing of
+density-based management procedures linked to simulated density \\
+Survey relative biomass in legal / sublegal size classes & Two
+additional indices included that are for legal and sublegal size classes
+providing information about the population structure and potentially
+allowing for management procedures that can account for shifts in size
+composition. \\
+Size composition data included for both fleet and survey & Two sources
+of size composition data were combined in model conditioning for Stat.
+areas 12 and 19 that are relatively `data rich' \\
+Evaluation of alternative spatial definitions & Stat. areas were
+aggregated into northern and southern areas to evaluate impact on
+estimates of reference points and stock status. \\
+\end{longtable}
+
+~
+
+Table 3c. Green urchin assumptions and to-do list
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Assumptions & To Do \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Stat. Area is the biological unit & Get biomass estimates from Lyanne -
+relative abundance indices? \\
+Similar diameter-wet weight relationship among Stat areas & How to
+construct a CPUE index? \\
+& Somatic growth parameter ranges? Currently K comes from red urchin in
+california and Linf from eye-balling the W-L data \\
+& Distribution for L50 needed (or suitable range) \\
+& Check Harvest header key \\
+& Add correct coords to OM objects by stat area \\
+& Robustness of size limit to changes in predators \\
+& Opening / closures rules based on abundance. \\
+\end{longtable}
+
+~
+
+\paragraph{Green Sea Urchin Meeting Notes
+etc.}\label{green-sea-urchin-meeting-notes-etc.}
+
+\href{Project_Info/Draft\%20summary\%20of\%20Urching\%20CSRF\%20Meeting_Feb13,\%202024_\%20Live\%20Notes.pdf}{Feb
+2024 Meeting Notes (.pdf)}
+
+~
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{\texorpdfstring{Giant Red Sea Cucumber
+(\emph{Apostichopus
+californicus})}{Giant Red Sea Cucumber (Apostichopus californicus)}}\label{giant-red-sea-cucumber-apostichopus-californicus}
+
+\paragraph{Operating Model
+Specification}\label{operating-model-specification-3}
+
+Sea cucumber operating models were configured to be numbers-based due to
+the inability to age sea cucumbers and representatively measure/weigh
+them. This entails the following working assumptions: knife-edge growth
+to size / weight 1 at age 2; Recruitment based on a Beverton-Holt S-R
+relationship calculated from mature numbers (the model includes a
+fecundity growth parameter k where fecundity follows a cubic
+relationship); Asymptotic selectivity from a young age class (e.g.~age
+4-7).
+
+Since harvesting is by diver and highly selective, regulation is by
+harvest rate and bag-limit, the numbers-based operating model is
+potentially appropriate for the management regime but requires realistic
+modelling of the bag-limit impacts on discard rate and size selectivity.
+
+Models were conditioned using RCM and fitted to historical catch in
+numbers, an estimate of absolute numbers, and a time series of survey
+density estimates.
+
+~
+
+Figure 4. Location of historical Sea Cucumber harvests.
+
+~
+
+\paragraph{Reference Case Operating
+Model}\label{reference-case-operating-model-3}
+
+\href{OM_Descriptions/Ref_Case_Sea_Cucumber_Annotated.html}{Reference
+Case Operating Model Description (.html)}
+
+~
+
+\paragraph{Area comparisons among Subareas (revised for 2024 from
+QMA)}\label{area-comparisons-among-subareas-revised-for-2024-from-qma}
+
+\href{Comparisons/Sea_Cucumber_Area_Comparison.html}{Subarea Comparisons
+(.html)}
+
+~
+
+Table 4a. Sea cucumber RCM model fits
+
+~
+
+\paragraph{Custom Analyses}\label{custom-analyses-3}
+
+In 2023, MSE-style closed-loop projections were undertaken for the
+current harvest rate, current catch levels and six example management
+procedures that aim for 2.2, 4.2 and 6.7\% harvest rates without
+alternating closures (C\_22, C\_42, C\_67) and also with alternating
+closures (Alt\_22, Alt\_42, Alt\_67) whereby the QMA is closed and
+opened every other projection year.
+
+The results of these demonstration analyses is documented
+\href{Project_Info/Custom\%20Analyses\%202023-2024.pdf}{here}
+
+~
+
+\paragraph{Project Status}\label{project-status-3}
+
+Table 4b. Project Updates and Progress
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Update & Details \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Revised to subarea models & Spatial unit changed back to subarea to
+allow for complete catch, density and biomass reporting for each
+model. \\
+Top 10 by landings & Ten operating models were configured based on the
+ten subareas with the most contributory historical landings \\
+Density included for MPs & By including observations of survey density
+it is now possible to configure management procedures and
+opening/closing rules based on simulated density observations \\
+Development of responsive management procedures & Allows for the testing
+of adaptable harvest rate policies and open/closure rules \\
+Rotational closure management procedures & Allows for evaluation of risk
+equivalency among harvest rates with and without rotational closures \\
+\end{longtable}
+
+~
+
+Table 4c. Green urchin assumptions and to-do list
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Assumptions & To Do \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Subarea is the biological unit & Managers / scientists to select a range
+of sub areas that span a range of exploitation, location and
+environmental conditions \\
+Modedl is numbers based (somatic growth, maturity, length-weight are
+unknown and variable) rather than biomass-based. & If possible, derive
+bag limit discarding rate using observations of catch rate and discard
+rate \\
+Knife edge weight / length at age of 1 at age 2+ & If possible, derive a
+(vague) model for size (age) selectivity given size (age)
+availability \\
+Density time series CV is 10\% & Include density index series to allow
+for testing of density based opening - closure rules (i.e.~based on sea
+cucumbers per meter of shoreline) \\
+Numbers time series CV is 10\% & Dynamic selectivity calculations (might
+be a better example in urchin / hake) \\
+Model includes a k (growth rate) for fecundity at age (cubic on inplied
+growht) between 0.3 and 0.5 & Add correct coords to OM objects by QMA \\
+& Check management intervals in OM \\
+& Can evalute survey frequency (2 - 4 years currently) \\
+& What density per subarea is indicative of overfishing~ \\
+& How precautionary are current management approaches? \\
+& What is the conservation benefit of no-take subareas? \\
+& Is the 2.5 C/m shoreline reopening threshold important to
+conservation? \\
+& Which areas are currently most at risk? \\
+& What is the relative performance of Control points based on unfished
+density (by subarea) rather than a nominal density (e.g.~x c/m-sl) \\
+& What is the relative performance of alternative control points? \\
+& Subarea control points - how well do these achieve overall (summed)
+LRP performance across multiple areas? \\
+& 15 cm `pencil' effect (is there some other reference that is better
+for fishermen?) \\
+\end{longtable}
+
+~
+
+\paragraph{Sea Cucumber Meeting Notes
+etc}\label{sea-cucumber-meeting-notes-etc}
+
+\href{Project_Info/Draft\%20Summary\%20of\%20Sea\%20Cucumber\%20CSRF\%20Meeting.pdf}{Feb
+2024 Meeting Notes (.pdf)}
+
+~
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Software and Code}\label{software-and-code}
+
+\href{https://github.com/mis-assess/csrf_hh_data}{csrf\_hh\_data GitHub
+Repository}
+
+\href{https://openMSE.com}{openMSE (MSEtool, DLMtool, SAMtool R
+libraries)}
+
+\href{https://samtool.openmse.com/reference/RCM.html}{Rapid Conditioning
+Model (RCM) (Huynh 2023)}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Recent Presentations}\label{recent-presentations}
+
+\href{Presentations/Geoduck\%20v2.pdf}{Geoduck Nov 2023 (.pdf)}
+
+\href{Presentations/Manilla\%20Clam\%20v4.pdf}{Manilla Clam Nov 2023
+(.pdf)}
+
+\href{Presentations/Cucumber\%203.pdf}{Cucumber Feb 2024 (.pdf)}
+
+\href{Presentations/Urchin\%204.pdf}{Urchin Feb 2024 (.pdf)}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{References}\label{references}
+
+\href{References/MPframework.pdf}{DFO 2021 (Anderson et al)}
+
+\href{References/Geoduck_IFMP.pdf}{Geoduck IFMP}
+
+\href{References/GSU_IFMP.pdf}{Green Sea Urchin IFMP}
+
+\href{References/Sea_Cucumber_IFMP.pdf}{Sea Cucumber IFMP}
+
+\href{References/Intertidal_Clams_IFMP.pdf}{Intertidal Clam IFMP}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Acknowledgements}\label{acknowledgements}
+
+Many thanks to Shannon Obradovich and Mackenzie Mazur for helping to
+direct and manage the research project.
+
+Special thanks to Rob Flemming for his help in providing and explaining
+the various datasets and also to Dominique Bureau for providing guidance
+on data interpretation and reviewing materials.
+
+Thanks to Ken Fong for his overview and expertise on the historical
+aspects of the fisheries, science and management programmes.
+
+Many thanks also to the contribution of individuals on the
+species-specific analyses:
+
+(Technical support) Meghan Burton; Mackenzie Mazur; Kelsey Dougan;
+
+(Managers) Amy Ganton, Brittany Myhal, Pauline Ridings, Jenny Smith,
+Erin Wylie;
+
+(Geoduck collaborators) Erin Porszt, Dominique Bureau;
+
+(Manila clam collaborators) Alexander Dalton, Dominique Bureau, Coral
+Cargill;
+
+(Green urchin collaborators) Lyanne Curtis, Christine Hansen, Travis
+Bell;
+
+(Sea cucumber collaborators) Jill Campbell, Christine Hansen, Erin
+Wylie, Travis Bell;
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+~~~~~~~~~~~~
+
+\end{document}

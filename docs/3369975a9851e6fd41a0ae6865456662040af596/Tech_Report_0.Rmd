@@ -2,7 +2,7 @@
 title: "Informing Management of B.C. Hand-Harvested Invertebrates: Operating Models, MPs and MSE"
 author: "Tom Carruthers <tom@bluematterscience.com>"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: html_document
+output: pdf_document
 always_allow_html: yes
 ---
 &nbsp;
